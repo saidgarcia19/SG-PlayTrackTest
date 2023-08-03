@@ -1,0 +1,67 @@
+# Carpeta bin y obj generada por el compilador
+bin/
+obj/
+
+# Archivos generados por Visual Studio
+*.exe
+*.dll
+*.pdb
+*.user
+*.suo
+*.cache
+*.log
+*.vspscc
+*.vssscc
+*.obj
+*.bin
+*.ncb
+*.sdf
+*.suo
+*.tlb
+*.tlh
+*.bak
+*.cache
+*.ilk
+*.aps
+*.pch
+*.log
+*.res
+*.tlb
+*.tli
+*.tlh
+*.docstates
+*.dbmdl
+*.sln.docstates
+
+# Carpetas generadas por Visual Studio
+_ReSharper*/
+*.ReSharper*/
+*.resharper.user
+
+# Archivos de compilación .NET Core
+*.dll
+*.exe
+*.json
+*.pfx
+*.csproj
+*.userprefs
+*.key
+*.snk
+
+# Cache y archivos temporales de .NET Core
+*.nuget/
+*.nupkg/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+*.obj
+*.cache
+*.tmp
+*.csproj.nuget.cache
+*.jfm
+*.pem
+
+# Archivos de respaldo de Visual Studio Code
+.vscode/
+*~
+/PlayTrackTestAPI/.vs/PlayTrackTestAPI/config
