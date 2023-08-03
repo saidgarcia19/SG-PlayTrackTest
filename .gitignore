@@ -65,3 +65,5 @@ artifacts/
 .vscode/
 *~
 /PlayTrackTestAPI/.vs/PlayTrackTestAPI/config
+/PlayTrackTestAPI/.vs/PlayTrackTestAPI/DesignTimeBuild/.dtbcache.v2
+/PlayTrackTestAPI/.vs/PlayTrackTestAPI/FileContentIndex
