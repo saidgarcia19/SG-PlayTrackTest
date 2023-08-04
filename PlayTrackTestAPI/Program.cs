@@ -1,6 +1,7 @@
 using Microsoft.AspNet.SignalR.Hosting;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
+using NLog.Web;
 using PlayTrackTestAPI.DB;
 using PlayTrackTestAPI.services;
 
@@ -17,6 +18,10 @@ builder.Services.AddDbContext<LibreriaContext>(options =>
 builder.Services.AddTransient<LibroService>();
 builder.Services.AddTransient<AutorService>();
 builder.Services.AddTransient<CategoriaService>();
+
+//Nlog
+builder.Logging.ClearProviders();
+builder.Host.UseNLog();
 
 var app = builder.Build();
 
