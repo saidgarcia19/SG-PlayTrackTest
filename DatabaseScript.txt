@@ -1,0 +1,56 @@
+CREATE DATABASE LibreriaDB;
+GO
+
+-- Seleccionar la base de datos
+USE LibreriaDB;
+GO
+
+-- Crear tabla de Autores
+CREATE TABLE Autores (
+    AutorID INT PRIMARY KEY,
+    Nombre VARCHAR(100),
+    Pais VARCHAR(50)
+);
+GO
+
+-- Crear tabla de Categorías
+CREATE TABLE Categorias (
+    CategoriaID INT PRIMARY KEY,
+    Nombre VARCHAR(50)
+);
+GO
+
+-- Crear tabla de Libros
+CREATE TABLE Libros (
+    LibroID INT PRIMARY KEY,
+    Titulo VARCHAR(200),
+    AutorID INT,
+    CategoriaID INT,
+    AnioPublicacion INT,
+    FOREIGN KEY (AutorID) REFERENCES Autores(AutorID),
+    FOREIGN KEY (CategoriaID) REFERENCES Categorias(CategoriaID)
+);
+GO
+
+-- Insert Tbl.Autores
+INSERT INTO Autores (AutorID, Nombre, Pais)
+VALUES 
+    (1, 'Gabriel García Márquez', 'Colombia'),
+    (2, 'J.K. Rowling', 'Reino Unido'),
+    (3, 'Haruki Murakami', 'Japón');
+
+-- Insert Tbl.Categorias
+INSERT INTO Categorias (CategoriaID, Nombre)
+VALUES 
+    (1, 'Ficción'),
+    (2, 'Fantasía'),
+    (3, 'Suspenso');
+
+-- Insert Tbl.Libros
+INSERT INTO Libros (LibroID, Titulo, AutorID, CategoriaID, AnioPublicacion)
+VALUES 
+    (1, 'Cien años de soledad', 1, 1, 1967),
+    (2, 'Harry Potter y la Piedra Filosofal', 2, 2, 1997),
+    (3, '1Q84', 3, 1, 2009),
+    (4, 'Crónica de una muerte anunciada', 1, 1, 1981),
+    (5, 'Norwegian Wood', 3, 1, 1987);
