@@ -14,9 +14,12 @@ namespace PlayTrackTestAPI.services
         {
             try
             {
+                //validar el modelo
                 if (libro != null)
                 {
+                    //buscar registro existente en la BD
                     Libros exist = _context.Libros.Where(x => x.LibroID == libro.LibroID).FirstOrDefault();
+                    //si no existe el registro, agregarlo
                     if (exist == null) {
                         Libros newLibro = new Libros
                         {
@@ -47,9 +50,10 @@ namespace PlayTrackTestAPI.services
         public List<BooksList> GetBooks()
         {
             List<BooksList> books = new List<BooksList>();
+            //buscar todos los registros en la BD
             List<Libros> libros = _context.Libros.Include(x => x.Autor)
                                                  .Include(y => y.Categoria).ToList();
-
+            //recorrer resultado para mapear el modelo de salida
             foreach (Libros libro in libros) 
             {
                 BooksList book = new BooksList

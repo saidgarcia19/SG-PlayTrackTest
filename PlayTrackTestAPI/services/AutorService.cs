@@ -11,9 +11,12 @@ namespace PlayTrackTestAPI.services
         {
             try
             {
-                if (autor != null)
+                //validar modelo
+                if (autor != null) 
                 {
+                    //Buscar registro existente en la BD
                     Autores exist = _context.Autores.Where(x => x.AutorID == autor.AutorID).FirstOrDefault();
+                    //si no existe, agregarlo
                     if (exist == null)
                     {
                         _context.Autores.Add(autor);
@@ -35,6 +38,7 @@ namespace PlayTrackTestAPI.services
 
         public List<Autores> GetAuthors()
         {
+            //obtener todos los registros de la tabla
             List<Autores> list = _context.Autores.ToList();
 
             return list;
