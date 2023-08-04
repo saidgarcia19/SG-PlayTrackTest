@@ -21,5 +21,6 @@
         <Label x:Name="txtResponse" Content="" HorizontalAlignment="Center" Margin="0,731,0,0" VerticalAlignment="Top" Width="674" Height="43" FontFamily="Arial Black" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <ComboBox x:Name="cbAuthorId" HorizontalAlignment="Left" Margin="289,342,0,0" VerticalAlignment="Top" Width="638" Height="69" DisplayMemberPath="Nombre" SelectedValuePath="AutorID" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <ComboBox x:Name="cbCategoryId" HorizontalAlignment="Left" Margin="289,451,0,0" VerticalAlignment="Top" Width="638" Height="69" DisplayMemberPath="Nombre" SelectedValuePath="CategoriaID" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Button Content="Books list" HorizontalAlignment="Left" Margin="776,650,0,0" VerticalAlignment="Top" Height="59" Width="191" Click="Button_Click" Background="#FF3DA0D9" FontSize="24" FontWeight="Bold" FontFamily="Arial"/>
     </Grid>
 </Window>

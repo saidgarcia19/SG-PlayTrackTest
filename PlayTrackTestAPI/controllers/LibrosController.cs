@@ -25,9 +25,9 @@ namespace PlayTrackTestAPI.controllers
 
         [HttpGet]
         [Route("api/Books/GetBooks")]
-        public List<Libros> GetBooks()
+        public List<BooksList> GetBooks()
         {
-            List<Libros> list = _libroService.GetBooks();
+            List<BooksList> list = _libroService.GetBooks();
             return list;
         }
         

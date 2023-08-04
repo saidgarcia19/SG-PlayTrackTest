@@ -44,12 +44,25 @@ namespace PlayTrackTestAPI.services
             catch { return "Something gone wrong"; }
         }
 
-        public List<Libros> GetBooks()
+        public List<BooksList> GetBooks()
         {
+            List<BooksList> books = new List<BooksList>();
             List<Libros> libros = _context.Libros.Include(x => x.Autor)
                                                  .Include(y => y.Categoria).ToList();
 
-            return libros;
+            foreach (Libros libro in libros) 
+            {
+                BooksList book = new BooksList
+                {
+                    Tittle = libro.Titulo,
+                    Author = libro.Autor.Nombre,
+                    Category = libro.Categoria.Nombre,
+                    Year = libro.AnioPublicacion
+                };
+                books.Add(book);
+            }    
+
+            return books;
         }
     }
 }

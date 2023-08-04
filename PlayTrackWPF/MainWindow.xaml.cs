@@ -139,5 +139,11 @@ namespace PlayTrackWPF
             }
             txtResponse.Visibility = Visibility.Collapsed;
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            BooksList booksList = new BooksList();
+            booksList.Show();
+        }
     }
 }
