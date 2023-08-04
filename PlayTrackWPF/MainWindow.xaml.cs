@@ -1,10 +1,13 @@
 ﻿using PlayTrackWPF.models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Net.Http;
+using System.Net.Http.Json;
 using System.Text;
 using System.Text.Json;
+using System.Text.Json.Nodes;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -25,9 +28,66 @@ namespace PlayTrackWPF
     {
         public MainWindow()
         {
+            GetAuthors();
+            GetCategorys();
             InitializeComponent();
         }
 
+        public async Task<List<Author>> GetAuthors()
+        {
+            List<Author> list = new List<Author>();
+
+            string getAuthorsUrl = "api/Authors/GetAuthors";
+
+            using (HttpClient httpClient = new HttpClient())
+            {
+                try
+                {
+                    // Realizar la solicitud
+                    httpClient.BaseAddress = new Uri("https://localhost:7065/");
+                   var response = await httpClient.GetFromJsonAsync<List<Author>>(getAuthorsUrl);
+                   list = response.ToList();
+                    cbAuthorId.ItemsSource = list;
+
+                }
+                catch (HttpRequestException ex)
+                {
+                    // Si se produce una excepción, manejar el error según corresponda
+                    txtResponse.Content = $"Error: {ex.Message}";
+                    txtResponse.Visibility = Visibility.Visible;
+                }
+            }
+
+            return list;
+        }
+
+        public async Task<List<Category>> GetCategorys()
+        {
+            List<Category> list = new List<Category>();
+
+            string getCategorysUrl = "api/Categorys/GetCategorys";
+
+            using (HttpClient httpClient = new HttpClient())
+            {
+                try
+                {
+                    // Realizar la solicitud
+                    httpClient.BaseAddress = new Uri("https://localhost:7065/");
+                    var response = await httpClient.GetFromJsonAsync<List<Category>>(getCategorysUrl);
+                    list = response.ToList();
+                    cbCategoryId.ItemsSource = list;
+
+                }
+                catch (HttpRequestException ex)
+                {
+                    // Si se produce una excepción, manejar el error según corresponda
+                    txtResponse.Content = $"Error: {ex.Message}";
+                    txtResponse.Visibility = Visibility.Visible;
+                }
+            }
+
+            return list;
+        }
         private async void btnAddBook_Click(object sender, RoutedEventArgs e)
         {
             //construir modelo
@@ -35,8 +95,8 @@ namespace PlayTrackWPF
             {
                 LibroID = Convert.ToInt16(txtId.Text),
                 Titulo = txtTitle.Text,
-                AutorID = Convert.ToInt16(txtAuthorID.Text),
-                CategoriaID = Convert.ToInt16(txtCategoryId.Text),
+                AutorID = 2,
+                CategoriaID = 2,
                 AnioPublicacion = Convert.ToInt16(txtPublishYear.Text),
             };
 

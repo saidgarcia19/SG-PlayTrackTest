@@ -23,7 +23,7 @@ namespace PlayTrackTestAPI.controllers
         }
 
         [HttpGet]
-        [Route("api/Categorys/GetAuthors")]
+        [Route("api/Categorys/GetCategorys")]
         public List<Categorias> GetCategorys()
         {
             List<Categorias> list = _categoriaService.GetCategorys();
