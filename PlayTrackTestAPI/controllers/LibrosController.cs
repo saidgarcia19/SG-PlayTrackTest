@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PlayTrackTestAPI.DB;
+using PlayTrackTestAPI.models;
 using PlayTrackTestAPI.services;
 
 namespace PlayTrackTestAPI.controllers
@@ -15,7 +16,7 @@ namespace PlayTrackTestAPI.controllers
         
         [HttpPost]
         [Route("api/Books/Add")]
-        public string AddBook(Libros libro)
+        public string AddBook(BookModel libro)
         {
             string response = _libroService.AddBook(libro);
 

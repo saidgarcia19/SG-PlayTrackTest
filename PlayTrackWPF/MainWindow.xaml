@@ -1,0 +1,25 @@
+﻿<Window x:Class="PlayTrackWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PlayTrackWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="800" Width="1000">
+    <Grid x:Name="Form" Background="#00000000">
+        <Rectangle HorizontalAlignment="Center" Height="107" Stroke="Black" VerticalAlignment="Top" Width="1000" Fill="#FF3DA0D9"/>
+        <Label x:Name="lblTitulo" Content="Add new Book" HorizontalAlignment="Center" Margin="0,27,0,0" VerticalAlignment="Top" Height="53" Width="356" HorizontalContentAlignment="Center" FontSize="36" FontFamily="Arial Black" FontWeight="Bold"/>
+        <TextBox x:Name="txtId" HorizontalAlignment="Left" Margin="289,129,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="638" Height="69" FontFamily="Arial" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="txtTitle" HorizontalAlignment="Left" Margin="289,231,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="638" Height="69" FontFamily="Arial" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="txtAuthorID" HorizontalAlignment="Left" Margin="289,342,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="638" Height="69" FontFamily="Arial" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="txtCategoryId" HorizontalAlignment="Left" Margin="289,451,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="638" Height="69" FontFamily="Arial" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="txtPublishYear" HorizontalAlignment="Left" Margin="289,558,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="638" Height="69" FontFamily="Arial" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label x:Name="lblId" Content="Book ID" HorizontalAlignment="Left" Margin="99,129,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.424,-2.248" Height="69" Width="126" FontFamily="Arial" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold"/>
+        <Label x:Name="lblTitle" Content="Tittle" HorizontalAlignment="Left" Margin="99,231,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.424,-2.248" Height="69" Width="126" FontFamily="Arial" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold"/>
+        <Label x:Name="lblAuthor" Content="Author" HorizontalAlignment="Left" Margin="99,342,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.424,-2.248" Height="69" Width="126" FontFamily="Arial" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold"/>
+        <Label x:Name="lblCategory" Content="Category" HorizontalAlignment="Left" Margin="99,451,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.424,-2.248" Height="69" Width="126" FontFamily="Arial" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold"/>
+        <Label x:Name="lblYear" Content="Year" HorizontalAlignment="Left" Margin="99,558,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.424,-2.248" Height="69" Width="126" FontFamily="Arial" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold"/>
+        <Button x:Name="btnAddBook" Content="Add" HorizontalAlignment="Center" Margin="0,650,0,0" VerticalAlignment="Top" Height="59" Width="216" FontSize="24" FontWeight="Bold" FontFamily="Arial" Background="#FF3DA0D9" Click="btnAddBook_Click"/>
+        <Label x:Name="txtResponse" Content="" HorizontalAlignment="Center" Margin="0,731,0,0" VerticalAlignment="Top" Width="674" Height="43" FontFamily="Arial Black" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+    </Grid>
+</Window>

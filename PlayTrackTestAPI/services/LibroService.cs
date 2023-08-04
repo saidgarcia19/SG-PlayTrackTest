@@ -1,6 +1,7 @@
 ﻿using PlayTrackTestAPI.DB;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using PlayTrackTestAPI.models;
 
 namespace PlayTrackTestAPI.services
 {
@@ -9,7 +10,7 @@ namespace PlayTrackTestAPI.services
         private readonly LibreriaContext _context;
         public LibroService(LibreriaContext context) { _context = context; }
 
-        public string AddBook(Libros libro)
+        public string AddBook(BookModel libro)
         {
             try
             {
@@ -17,7 +18,16 @@ namespace PlayTrackTestAPI.services
                 {
                     Libros exist = _context.Libros.Where(x => x.LibroID == libro.LibroID).FirstOrDefault();
                     if (exist == null) {
-                        _context.Libros.Add(libro);
+                        Libros newLibro = new Libros
+                        {
+                            LibroID = libro.LibroID,
+                            Titulo = libro.Titulo,
+                            AutorID = libro.AutorID,
+                            CategoriaID = libro.CategoriaID,
+                            AnioPublicacion = libro.AnioPublicacion
+                        };
+
+                        _context.Libros.Add(newLibro);
                         _context.SaveChanges();
                     }
                     else
